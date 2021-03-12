@@ -1,12 +1,12 @@
 import smtplib
 from email.mime.text import MIMEText
 
-def send_mail(iD, name, resource, event, filter, orgId, createdBy, appId, ownedBy, status, actorId):
+def send_mail(iD, name, resource, event, filter, orgId, createdBy, appId, ownedBy, status, actorId, data_id, data_roomId, datapersonId, data_personEmail, data_created):
     port = 2525 #this is for mailtrap only. Your email will be different
     smtp_server = 'smtp.mailtrap.io'
     login = 'dc752d9500a35b'
     password = 'c4a5cde79cbbc5'
-    message = f"<h3>Your webhook posted the following info</h3><ul><li>Webhook ID: {iD}</li><li>Name: {name}</li><li>Resource: {resource}</li><li>Event: {event}</li><li>Filter: {filter}</li><li>Org ID: {orgId}</li><li>Created By: {createdBy}</li><li>App ID: {appId}</li><li>Owned By: {ownedBy}</li><li>Status: {status}</li><li>Actor ID: {actorId}</li></ul>"
+    message = f"<h3>Your webhook posted the following info</h3><ul><li>Webhook ID: {iD}</li><li>Name: {name}</li><li>Resource: {resource}</li><li>Event: {event}</li><li>Filter: {filter}</li><li>Org ID: {orgId}</li><li>Created By: {createdBy}</li><li>App ID: {appId}</li><li>Owned By: {ownedBy}</li><li>Status: {status}</li><li>Actor ID: {actorId} <li>DATA:</li><li>Message ID: {data_id}</li><li>Room ID: {data_roomId}</li><li>Person's ID: {datapersonId}</li><li>Person's Email: {data_personEmail}</li><li>Date Created: {data_created}</li></ul>"
     sender_email = 'email1@example.com'
     receiver_email = 'email2@example.com'
 

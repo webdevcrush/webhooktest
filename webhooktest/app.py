@@ -20,23 +20,18 @@ def webhookevent():
         ownedBy = req.get("ownedBy")
         status = req.get("status")
         actorId = req.get("actorId")
-        
-        # data 
-        # {
-        #     id
-        #     roomId
-        #     personId
-        #     personEmail
-        #     created
-        # }
-        # Probaby not required to handle all of these... so can grab only the ones you want.
-        # For a workable example, however, you'd probably wnat to handle all of them.
+        data_id = req['data']['id']
+        data_roomId = req['data']['roomId']
+        data_personId = req['data']['personId']
+        data_personEmail = req['data']['personEmail']
+        data_created = req['data']['created']
+
 
         print(iD)
         print(name)
         print(resource)
       
-        send_mail(iD, name, resource, event, filter, orgId, createdBy, appId, ownedBy, status, actorId)
+        send_mail(iD, name, resource, event, filter, orgId, createdBy, appId, ownedBy, status, actorId, data_id, data_roomId, data_personId, data_personEmail, data_created)
         return "okay", 200
     elif request.method == 'GET':
         return "Yes, this works okay."
